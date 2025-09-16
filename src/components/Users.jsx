@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { use } from 'react';
 
-const Users = () => {
+const Users = ({usersPromise}) => {
+
+    const initalUsers = use(usersPromise);
+    console.log(initalUsers);;
 
     const handleAddUser = e=>{
         e.preventDefault();
@@ -21,6 +24,10 @@ const Users = () => {
         .then(res=>res.json())
         .then(data =>{
             console.log('data after creating user in db', data);
+            if(data.insertedId){
+                alert('User added successfully');
+                e.target.reset();
+            }
         })
     }
     return (
