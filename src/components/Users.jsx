@@ -11,7 +11,13 @@ const Users = () => {
 
 
         //create user in the db
-        fetch('')
+        fetch('http://localhost:3000/users', {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(newUser)
+        })
         .then(res=>res.json())
         .then(data =>{
             console.log('data after creating user in db', data);
