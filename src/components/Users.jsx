@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, {  use, useState } from 'react';
 
 const Users = ({usersPromise}) => {
 
@@ -6,6 +6,10 @@ const Users = ({usersPromise}) => {
     console.log(initalUsers);
 
     const [users, setUsers]= useState(initalUsers)
+
+    
+
+  
 
     const handleAddUser = e=>{
         e.preventDefault();
@@ -80,3 +84,5 @@ const Users = ({usersPromise}) => {
 };
 
 export default Users;
+
+
