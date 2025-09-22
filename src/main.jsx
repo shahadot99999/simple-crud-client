@@ -41,6 +41,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import MainLayout from './layout/MainLayout.jsx';
+import UserDetails from './components/UserDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
       {
         index: true, 
         element: <App />, // Use element instead of Component
+      },
+      {
+        path: 'users/:id',
+        loader: ({params})=>fetch(`http://localhost:3000/users/${params.id}`),
+        element: <UserDetails></UserDetails>
       },
     ],
   },
