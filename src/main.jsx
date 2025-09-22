@@ -42,6 +42,7 @@ import {
 } from "react-router-dom";
 import MainLayout from './layout/MainLayout.jsx';
 import UserDetails from './components/UserDetails.jsx';
+import UpdateUser from './components/UpdateUser.jsx';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
         path: 'users/:id',
         loader: ({params})=>fetch(`http://localhost:3000/users/${params.id}`),
         element: <UserDetails></UserDetails>
+      },
+       {
+        path: '/update/:id',
+        loader: ({params})=>fetch(`http://localhost:3000/users/${params.id}`),
+        element:<UpdateUser></UpdateUser>
       },
     ],
   },
